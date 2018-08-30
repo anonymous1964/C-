@@ -1,0 +1,79 @@
+########################################################3.3.3值类型和引用类型区别#############################################################
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            ReferenceAndValue.Demontration();
+            Console.ReadLine();
+        }
+    }
+    public class stamp
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+    public static class ReferenceAndValue
+        {
+        public static void Demontration()
+        {
+            stamp Stamp_1 = new stamp { Name = "Premiere", Age = 25 };
+            stamp Stamp_2 = new stamp { Name = "Again" ,Age = 47 };
+            int age = Stamp_1.Age;                                              //值类型
+            Stamp_1.Age = 22;
+            stamp guru = Stamp_2;                                               //引用类型
+            Stamp_2.Name = "huang xiao wei";
+            Console.WriteLine("Stamp_1's age:{0}",Stamp_1.Age);
+            Console.WriteLine("age's value:{0}", age);
+            Console.WriteLine("Stamp_2's name:{0}", Stamp_2.Name);
+            Console.WriteLine("guru's name:{0}", guru.Name);
+
+
+        }
+        }
+}
+
+#######################################################3.3.4枚举类型##############################################################
+using System;
+
+namespace ConsoleApp2
+{
+  
+    class Program
+    {
+        enum MyDate
+        {
+            Mon = 1,
+            Tue = 2,
+            Wed = 3,
+            Thi = 4,
+            Fri = 5,
+            Sat = 6,
+            Sun=7
+
+        }
+        static void Main(string[] args)
+        {
+            int k = (int)DateTime.Now.DayOfWeek;
+            switch(k)
+            {
+                case (int)MyDate.Sun:Console.WriteLine("今天是星期日");break;
+                case (int)MyDate.Mon:Console.WriteLine("今天是星期一");break;
+                case (int)MyDate.Tue:Console.WriteLine("今天是星期二");break;
+                case (int)MyDate.Wed:Console.WriteLine("今天是星期三");break;
+                case (int)MyDate.Thi:Console.WriteLine("今天是星期四");break;
+                case (int)MyDate.Fri:Console.WriteLine("今天是星期五");break;
+                case (int)MyDate.Sat:Console.WriteLine("今天是星期六");break;
+            }
+            Console.ReadLine();
+            
+        }
+    }
+    
+}
+##########################################################################################################################################
+
